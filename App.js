@@ -1,4 +1,12 @@
-import { Text, View, StyleSheet, SafeAreaView, Button, Pressable } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  SafeAreaView,
+  Button,
+  Pressable,
+} from "react-native";
+import { Themes } from "./assets/Themes";
 import { NavigationContainer } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -14,13 +22,15 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        // tabBarOptions={{
-        //   labelStyle: { fontSize: 12, fontFamily: "Avenir", marginBottom: 8 },
-        // }}
+        tabBarOptions={{
+          labelStyle: {
+            fontSize: 12,
+            fontFamily: "Avenir",
+          },
+        }}
         screenOptions={({ route }) => ({
           headerShown: false,
-          // tabBarStyle: { height: 60 },
-          // Todo Change the icons of the tab bar}
+          tabBarStyle: styles.tabBarStyle,
           tabBarIcon: ({ focused }) => {
             let iconName;
             if (route.name === "Home") {
@@ -29,9 +39,12 @@ export default function App() {
               iconName = focused ? "calendar" : "calendar-outline";
             } else if (route.name === "Profile") {
               iconName = focused
-                ? "information-circle" : "information-circle-outline";
+                ? "information-circle"
+                : "information-circle-outline";
             }
-            return <Ionicons name={iconName} size={32} color="navy" />;
+            return (
+              <Ionicons name={iconName} size={32} color={Themes.colors.black} />
+            );
           },
         })}
       >
@@ -44,11 +57,14 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  tabBarStyle: {
+    backgroundColor: Themes.colors.greenBackground,
+  },
   screenContainer: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "lightsteelblue",
+    backgroundColor: Themes.colors.greenBackground,
   },
   screenText: {
     fontSize: 32,
@@ -58,13 +74,13 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white',
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "white",
   },
   title: {
     fontSize: 40,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     margin: 10,
   },
   button: {
@@ -73,12 +89,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     margin: 10,
     borderRadius: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'black',
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "black",
   },
   buttonText: {
-    color: 'white',
-    fontWeight: 'bold',
+    color: "white",
+    fontWeight: "bold",
   },
 });

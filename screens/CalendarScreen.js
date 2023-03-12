@@ -1,17 +1,24 @@
-import { StyleSheet, SafeAreaView, Text, Pressable, StatusBar, View } from "react-native";
+import {
+  StyleSheet,
+  SafeAreaView,
+  Text,
+  Pressable,
+  StatusBar,
+  View,
+} from "react-native";
 import { Themes } from "../assets/Themes";
 import PlateList from "../components/PlateList";
 
 const menu = [
   {
-    date: "2023-03-01",
+    date: "Monday, 2023-03-01",
     description: {
       lunch: "Chicken and rice",
       dinner: "salmon and seaweed",
     },
   },
   {
-    date: "2023-03-02",
+    date: "Tuesday, 2023-03-02",
     description: {
       lunch: "pad thai",
       dinner: "steak and potatoes",
@@ -31,7 +38,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: Themes.colors.white,
+    backgroundColor: Themes.colors.greenBackground,
   },
   text: {
     color: "red",

@@ -1,16 +1,30 @@
-import { Image, Dimensions, TextInput, StyleSheet, SafeAreaView, Text, Pressable, StatusBar, View } from "react-native";
+import {
+  Image,
+  Dimensions,
+  TextInput,
+  StyleSheet,
+  SafeAreaView,
+  Text,
+  Pressable,
+  StatusBar,
+  View,
+} from "react-native";
 import { Themes } from "../assets/Themes";
-import { useState } from 'react';
+import { useState } from "react";
+import Header from "../components/Header";
 
-const { width, height } = Dimensions.get('window');
+const { width, height } = Dimensions.get("window");
 
 export default function ProfileScreen({ navigation }) {
-  const [dietRestrictions, setDietRestrictions] = useState('');
+  const [dietRestrictions, setDietRestrictions] = useState("");
 
   return (
     <View style={styles.screenContainer}>
       <View>
-        <Image style={styles.profilePic} source={require('../assets/steven-pic.jpeg')}/> 
+        <Image
+          style={styles.profilePic}
+          source={require("../assets/steven-pic.jpeg")}
+        />
       </View>
       <View style={styles.infoContainer}>
         <View style={styles.textContainer}>
@@ -20,17 +34,22 @@ export default function ProfileScreen({ navigation }) {
         </View>
         <TextInput
           value={dietRestrictions}
-          onChangeText={(dietRestrictions) => setDietRestrictions(dietRestrictions)}
+          onChangeText={(dietRestrictions) =>
+            setDietRestrictions(dietRestrictions)
+          }
           placeholder="Enter any dietary restrictions here..."
           style={styles.textInput}
           multiline={true}
         />
       </View>
       <Pressable
-          onPress={() => console.log(`Saved dietary restrictions: ${dietRestrictions}`)}
-          style={styles.button}>
-          <Text style={styles.buttonText}>SAVE CHANGES</Text>
-        </Pressable>
+        onPress={() =>
+          console.log(`Saved dietary restrictions: ${dietRestrictions}`)
+        }
+        style={styles.button}
+      >
+        <Text style={styles.buttonText}>SAVE CHANGES</Text>
+      </Pressable>
     </View>
   );
 }
@@ -46,7 +65,7 @@ const styles = StyleSheet.create({
     width: width - 32,
     height: height * 0.2,
     borderRadius: 12,
-    borderColor: 'black',
+    borderColor: "black",
     borderWidth: 1,
     paddingLeft: 10,
     marginBottom: 12,
@@ -56,19 +75,20 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "lightsteelblue",
+    // backgroundColor: "lightsteelblue",
+    backgroundColor: Themes.colors.greenBackground,
   },
   infoContainer: {
     flex: 0,
     justifyContent: "center",
     alignItems: "flex-start",
-    backgroundColor: "lightsteelblue",
+    // backgroundColor: "lightsteelblue",
   },
   textContainer: {
     paddingBottom: 8,
     justifyContent: "center",
     alignItems: "flex-start",
-    backgroundColor: "lightsteelblue",
+    // backgroundColor: "lightsteelblue",
   },
   text: {
     color: "black",
@@ -80,12 +100,12 @@ const styles = StyleSheet.create({
     height: 32,
     fontSize: 20,
     borderRadius: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'black',
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: Themes.colors.greenFive,
   },
   buttonText: {
-    color: 'white',
-    fontWeight: 'bold',
+    color: "white",
+    fontWeight: "bold",
   },
 });

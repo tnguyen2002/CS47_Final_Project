@@ -22,7 +22,21 @@ const Day = ({
           <Checkbox />
         </View>
         <View style={styles.descriptionBox}>
-          <Text>{description.lunch}</Text>
+          <Text
+            style={styles.descriptionText}
+          >{`\u2022 ${description.lunch}`}</Text>
+          <Text
+            style={styles.descriptionText}
+          >{`\u2022 ${description.lunch}`}</Text>
+          <Text
+            style={styles.descriptionText}
+          >{`\u2022 ${description.lunch}`}</Text>
+          <Text
+            style={styles.descriptionText}
+          >{`\u2022 ${description.lunch}`}</Text>
+          <Text
+            style={styles.descriptionText}
+          >{`\u2022 ${description.lunch}`}</Text>
         </View>
         <View style={styles.mealContainer}>
           <Text style={styles.mealText}>Dinner:</Text>
@@ -32,7 +46,18 @@ const Day = ({
           <Checkbox />
         </View>
         <View style={styles.descriptionBox}>
-          <Text>{description.dinner}</Text>
+          <Text
+            style={styles.descriptionText}
+          >{`\u2022 ${description.dinner}`}</Text>
+          <Text
+            style={styles.descriptionText}
+          >{`\u2022 ${description.dinner}`}</Text>
+          <Text
+            style={styles.descriptionText}
+          >{`\u2022 ${description.dinner}`}</Text>
+          <Text
+            style={styles.descriptionText}
+          >{`\u2022 ${description.dinner}`}</Text>
         </View>
       </View>
     </View>
@@ -44,43 +69,58 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     alignItems: "center",
     width: windowWidth,
-    backgroundColor: "red",
   },
   dayContainer: {
     display: "flex",
     flexDirection: "column",
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
     alignItems: "center",
     width: windowWidth,
     height: windowHeight * 0.3,
-    backgroundColor: Themes.colors.white,
+    padding: 10,
   },
   mealContainer: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
-    backgroundColor: Themes.colors.lightGreen,
-    // flexWrap: "wrap",
-    // margin: windowHeight * 0.01,1
+    backgroundColor: Themes.colors.greenOne,
+    aspectRatio: 10 / 1,
     width: windowWidth * 0.8,
-    height: windowHeight * 0.05,
-    borderRadius: 7.5,
+    height: "auto",
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
   },
   descriptionBox: {
+    display: "flex",
+    // flex: 1,s
     width: windowWidth * 0.8,
-    backgroundColor: Themes.colors.lightGreen,
+    // backgroundColor: Themes.colors.greenOne,
+    borderRadius: 7.5,
   },
   dateText: {
     fontWeight: "bold",
     fontSize: windowWidth * 0.05,
+    textDecorationLine: "underline",
   },
   mealText: {
     fontWeight: "bold",
-    fontSize: windowWidth * 0.03,
+    fontSize: windowWidth * 0.05,
   },
   signUpText: {
     fontSize: windowWidth * 0.03,
+  },
+  descriptionText: {
+    fontSize: windowWidth * 0.03,
+    // padding: 1,
   },
 });
 export default Day;

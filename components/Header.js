@@ -6,33 +6,33 @@ import {
   StyleSheet,
   Dimensions,
 } from "react-native";
-import Header from "../components/Header";
 import { Themes } from "../assets/Themes";
 import Day from "../components/Day";
 
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
-//example of the data, we will pull this from the backend
-
-const PlateList = ({ menu }) => {
+const Header = ({}) => {
   return (
-    <View styles={styles.container}>
-      <Header />
-      <FlatList
-        data={menu}
-        renderItem={({ item, index }) => (
-          <Day date={item.date} description={item.description} />
-        )}
-        keyExtractor={(item) => item.id}
+    <View style={styles.container}>
+      <Image
+        style={styles.latePlateLogo}
+        source={require("../assets/lateplate-logo.png")}
       />
+      <Text style={styles.latePlateText}>Late Plate</Text>
     </View>
   );
 };
+export default Header;
+
 const styles = StyleSheet.create({
   container: {
     display: "flex",
-    flexDirection: "column",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: Themes.colors.headerGreen,
+    height: windowHeight * 0.075,
   },
   latePlateLogo: {
     aspectRatio: 1 / 1,
@@ -45,4 +45,3 @@ const styles = StyleSheet.create({
     color: Themes.colors.white,
   },
 });
-export default PlateList;
