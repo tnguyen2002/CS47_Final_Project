@@ -1,28 +1,31 @@
-import {
-  StyleSheet,
-  SafeAreaView,
-  Text,
-  Pressable,
-  StatusBar,
-  View,
-} from "react-native";
+import { StyleSheet, SafeAreaView, Text, Pressable, StatusBar, View } from "react-native";
 import { Themes } from "../assets/Themes";
+import Day from "../components/Day";
+import Login from "../components/Login";
+
 export default function HomeScreen({ navigation }) {
+  let login = false;
+
+  let contentDisplayed = null;
+  if (login) {
+    contentDisplayed = <Day date='3/11' description='BBQ' navigation={navigation}/>
+  } else {
+    contentDisplayed = <Login navigation={navigation}/>
+  }
+  
   return (
-    <View style={styles.screenContainer}>
-      {/* TODO: Your code goes here */}
-      <Text style={styles.text}>Home Screen!</Text>
-      {/* <Text style={{ color: "white" }}>Welcome to Assignment 3 - Spotify!</Text> */}
-    </View>
+    <SafeAreaView style={styles.container}>
+      {contentDisplayed}
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  screenContainer: {
+  container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "lightsteelblue",
+    backgroundColor: "white",
   },
   text: {
     color: "red",

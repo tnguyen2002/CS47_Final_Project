@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, SafeAreaView } from "react-native";
+import { Text, View, StyleSheet, SafeAreaView, Button, Pressable } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "./screens/HomeScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import CalendarScreen from "./screens/CalendarScreen";
+import Login from "./components/Login";
 
 const Tab = createBottomTabNavigator();
 
@@ -25,11 +26,10 @@ export default function App() {
             if (route.name === "Home") {
               iconName = focused ? "home" : "home-outline";
             } else if (route.name === "Calendar") {
-              iconName = focused ? "settings" : "settings-outline";
+              iconName = focused ? "calendar" : "calendar-outline";
             } else if (route.name === "Profile") {
               iconName = focused
-                ? "information-circle"
-                : "information-circle-outline";
+                ? "information-circle" : "information-circle-outline";
             }
             return <Ionicons name={iconName} size={32} color="navy" />;
           },
@@ -55,5 +55,30 @@ const styles = StyleSheet.create({
     fontFamily: "Avenir",
     color: "white",
     fontWeight: "bold",
+  },
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+  },
+  title: {
+    fontSize: 40,
+    fontWeight: 'bold',
+    margin: 10,
+  },
+  button: {
+    width: 150,
+    height: 32,
+    fontSize: 20,
+    margin: 10,
+    borderRadius: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'black',
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
   },
 });
