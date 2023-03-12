@@ -6,8 +6,9 @@ const windowHeight = Dimensions.get("window").height;
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 const Day = ({
-  date, // date from backend
-  description, //description of the meal from back nd
+  date, // date from back end
+  description, //description of the meal from back end
+  navigation,
 }) => {
   return (
     <View style={styles.container}>

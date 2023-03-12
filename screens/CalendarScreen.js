@@ -1,11 +1,4 @@
-import {
-  StyleSheet,
-  SafeAreaView,
-  Text,
-  Pressable,
-  StatusBar,
-  View,
-} from "react-native";
+import { StyleSheet, SafeAreaView, Text, Pressable, StatusBar, View } from "react-native";
 import { Themes } from "../assets/Themes";
 import PlateList from "../components/PlateList";
 
