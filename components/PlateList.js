@@ -18,7 +18,11 @@ const PlateList = ({ menu }) => {
   return (
     <View styles={styles.container}>
       <View style={styles.topBar}>
-        <Text>LatePlate</Text>
+        <Image
+          style={styles.latePlateLogo}
+          source={require("../assets/lateplate-logo.png")}
+        />
+        <Text style={styles.latePlateText}>Late Plate</Text>
       </View>
       <FlatList
         data={menu}
@@ -35,6 +39,23 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
   },
-  topBar: {},
+  topBar: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: Themes.colors.headerGreen,
+    height: windowHeight * 0.075,
+  },
+  latePlateLogo: {
+    aspectRatio: 1 / 1,
+    height: windowHeight * 0.05,
+    width: undefined,
+  },
+  latePlateText: {
+    fontWeight: "bold",
+    fontSize: windowHeight * 0.04,
+    color: Themes.colors.white,
+  },
 });
 export default PlateList;

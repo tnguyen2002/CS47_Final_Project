@@ -1,5 +1,4 @@
-// import Images from "../Images/images";
+import Images from "../Images/images";
 import Themes from "./themes";
 
-// export { Images, Themes };
-export { Themes };
+export { Images, Themes };
