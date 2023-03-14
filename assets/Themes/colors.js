@@ -8,4 +8,6 @@ export const colors = {
   greenBackground: "#EFFDF3",
   white: "#FFFFFF",
   black: "#000000",
+  blue: "#7EB3F9",
+  red: "#FF9A8E",
 };

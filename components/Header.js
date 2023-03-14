@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: Themes.colors.headerGreen,
-    height: windowHeight * 0.075,
+    width: windowWidth,
   },
   latePlateLogo: {
     aspectRatio: 1 / 1,

@@ -22,12 +22,6 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        tabBarOptions={{
-          labelStyle: {
-            fontSize: 12,
-            fontFamily: "Avenir",
-          },
-        }}
         screenOptions={({ route }) => ({
           headerShown: false,
           tabBarStyle: styles.tabBarStyle,

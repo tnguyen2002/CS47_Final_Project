@@ -20,6 +20,7 @@ const PlateList = ({ menu }) => {
     <View styles={styles.container}>
       <Header />
       <FlatList
+        contentContainerStyle={styles.flatListContainer}
         data={menu}
         renderItem={({ item, index }) => (
           <Day date={item.date} description={item.description} />
@@ -33,16 +34,13 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "column",
+    justifyContent: "space-between",
   },
-  latePlateLogo: {
-    aspectRatio: 1 / 1,
-    height: windowHeight * 0.05,
-    width: undefined,
-  },
-  latePlateText: {
-    fontWeight: "bold",
-    fontSize: windowHeight * 0.04,
-    color: Themes.colors.white,
-  },
+  // flatListContainer: {
+  //   display: "flex",
+  //   flexDirection: "column",
+  //   alignContent: "center",
+  //   backgroundColor: "red",
+  // },
 });
 export default PlateList;

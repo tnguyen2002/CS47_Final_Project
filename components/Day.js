@@ -4,6 +4,7 @@ import { Themes } from "../assets/Themes";
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { BottomTabBar } from "@react-navigation/bottom-tabs";
 
 const Day = ({
   date, // date from back end
@@ -12,9 +13,11 @@ const Day = ({
 }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.dayContainer}>
+      <View style={styles.dateContainer}>
         <Text style={styles.dateText}>{date}</Text>
-        <View style={styles.mealContainer}>
+      </View>
+      <View style={styles.mealContainer}>
+        <View style={styles.mealHeader}>
           <Text style={styles.mealText}>Lunch:</Text>
           <Text style={styles.signUpText}>Late Plate:</Text>
           <Checkbox />
@@ -38,7 +41,9 @@ const Day = ({
             style={styles.descriptionText}
           >{`\u2022 ${description.lunch}`}</Text>
         </View>
-        <View style={styles.mealContainer}>
+      </View>
+      <View style={styles.mealContainer}>
+        <View style={styles.mealHeader}>
           <Text style={styles.mealText}>Dinner:</Text>
           <Text style={styles.signUpText}>Late Plate:</Text>
           <Checkbox />
@@ -67,59 +72,60 @@ const styles = StyleSheet.create({
   container: {
     display: "flex",
     flexDirection: "column",
+    alignSelf: "center",
     alignItems: "center",
-    width: windowWidth,
+    backgroundColor: Themes.colors.greenOne,
+    width: windowWidth * 0.9,
+    height: "auto",
+    borderRadius: 20,
+    // borderWidth: 1,
+    borderColor: "black",
+    margin: 10,
   },
-  dayContainer: {
+  dateContainer: {
     display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "center",
-    width: windowWidth,
-    height: windowHeight * 0.3,
-    padding: 10,
+    flexDirection: "row",
+    justifyContent: "center",
+    width: "100%",
+    // borderRadius: 10,
+    backgroundColor: Themes.colors.red,
   },
   mealContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+  },
+  mealHeader: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-evenly",
     alignItems: "center",
-    backgroundColor: Themes.colors.greenOne,
-    aspectRatio: 10 / 1,
-    width: windowWidth * 0.8,
-    height: "auto",
-    borderRadius: 10,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-
-    elevation: 5,
+    backgroundColor: Themes.colors.blue,
+    width: "100%",
   },
   descriptionBox: {
     display: "flex",
-    // flex: 1,s
     width: windowWidth * 0.8,
-    // backgroundColor: Themes.colors.greenOne,
     borderRadius: 7.5,
   },
   dateText: {
     fontWeight: "bold",
-    fontSize: windowWidth * 0.05,
-    textDecorationLine: "underline",
+    fontSize: windowWidth * 0.04,
+    fontFamily: "Helvetica",
   },
   mealText: {
     fontWeight: "bold",
-    fontSize: windowWidth * 0.05,
+    fontSize: windowWidth * 0.03,
+    fontFamily: "Helvetica",
   },
   signUpText: {
     fontSize: windowWidth * 0.03,
+    fontFamily: "Helvetica",
   },
   descriptionText: {
     fontSize: windowWidth * 0.03,
+    fontFamily: "Helvetica",
     // padding: 1,
   },
 });
